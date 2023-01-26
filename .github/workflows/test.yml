@@ -12,7 +12,7 @@ jobs:
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
-          image: jfaz/testing:latest
+          image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/
           run: |
             cd test
