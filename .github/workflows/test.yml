@@ -3,8 +3,8 @@ on:
   push:
     branches: [ main ]
 jobs:
-  compile:
-    name: Compile site assets
+  test:
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -13,7 +13,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: jfaz1/testing:latest
-          options: -v ${{ github.workspace }}:/
+          options: -v ${{ github.workspace }}:/usr/src/repo
           run: |
-            cd test
-            ls >> $GITHUB_OUTPUT
+            cd /usr/src/repo
+            ls -a >> $GITHUB_OUTPUT
