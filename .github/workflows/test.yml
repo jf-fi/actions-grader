@@ -15,7 +15,7 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work -e GITHUB_WORKSPACE="/work" -e B=\033[0;34m
           run: |
-            echo ""
+            echo "\n"
             echo "${B}------- START TESTS -------"
             chmod +x /work/test/test.sh
             /work/test/test.sh            
