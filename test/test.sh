@@ -1,6 +1,4 @@
-echo "${R}This is TEST output"
-echo "${B}This is TEST output"
-echo "${G}This is TEST output"
-echo "${Y}This is TEST output"
-touch ./results.csv
-echo "Test Results" >> ./results.csv
+lg -r p -m "This one passed"
+lg -r f -m "This one failed"
+
+lg -o
