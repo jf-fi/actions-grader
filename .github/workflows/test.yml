@@ -15,5 +15,6 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/usr/src/repo
           run: |
+            mkdir -p /usr/src/repo
             cd /usr/src/repo
             ls -a >> $GITHUB_OUTPUT
