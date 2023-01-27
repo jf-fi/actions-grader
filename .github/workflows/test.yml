@@ -15,7 +15,13 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work -e R=\033[0;31m -e Y=\033[1;33m -e G=\033[0;32m -e B=\033[0;34m
           run: |
-            echo "\n${B}------- START TESTS -------"
+            echo ""
+            echo "${B}------- START TESTS -------"
             chmod +x /work/test/test.sh
             /work/test/test.sh            
             echo "${B}-------- END TESTS --------"
+      - name: Save results
+        uses: actions/upload-artifact@v3
+        with:
+          name: results
+          path: /work/test/results.csv
