@@ -14,5 +14,5 @@ jobs:
         with:
           image: jfaz1/testing:latest
           run: |
-            cd /github/workspace/
+            cd /
             ls -a >> $GITHUB_OUTPUT
