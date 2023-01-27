@@ -13,7 +13,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: jfaz1/testing:latest
-          options: -v ${{ github.workspace }}:/work -e R='\033[0;31m' -e Y='\033[1;33m' -e G='\033[0;32m' -e B='\033[0;34m'
+          options: -v ${{ github.workspace }}:/work -e R="\033[0;31m" -e Y="\033[1;33m" -e G="\033[0;32m" -e B="\033[0;34m"
           run: |
             chmod +x /work/test/test.sh
             /work/test/test.sh
