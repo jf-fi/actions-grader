@@ -1,4 +1,4 @@
-echo -e "${R}This is TEST output"
-echo -e "${B}This is TEST output"
-echo -e "${G}This is TEST output"
-echo -e "${Y}This is TEST output"
+echo "${R}This is TEST output"
+echo "${B}This is TEST output"
+echo "${G}This is TEST output"
+echo "${Y}This is TEST output"
