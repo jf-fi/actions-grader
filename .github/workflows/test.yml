@@ -15,5 +15,4 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work
           run: |
-            cd /work
             ls -a >> $GITHUB_OUTPUT
