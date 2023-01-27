@@ -14,4 +14,4 @@ jobs:
         with:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work
-          run: echo "Running Script"
+          run: ls -a /
