@@ -15,4 +15,5 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work
           run: |
-            ls /work/
+            chmod +x /work/test/test.sh
+            /work/test/test.sh
