@@ -13,8 +13,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: jfaz1/testing:latest
-          options: -v ${{ github.workspace }}:/usr/src/repo
           run: |
-            mkdir -p /usr/src/repo
-            cd /usr/src/repo
+            cd /github/workspace/
             ls -a >> $GITHUB_OUTPUT
