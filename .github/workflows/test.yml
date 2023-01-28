@@ -25,7 +25,7 @@ jobs:
           name: results
           path: ${{ github.workspace }}/test/results.csv
       - name: Check if failed
-        if: ${{ failed }} == 1
+        if: env.FAILED == '1'
         uses: actions/github-script@v3
         with:
           script: core.setFailed('Failed one or more tests!')
