@@ -19,7 +19,6 @@ jobs:
             cd /work/test
             chmod +x ./test.sh
             ./test.sh
-            lg -o
             echo "${B}-------------------- END TESTS --------------------"
       - name: Save results
         uses: actions/upload-artifact@v3
