@@ -18,7 +18,8 @@ jobs:
             echo "${B}------------------- START TESTS -------------------"
             cd /work/test
             chmod +x ./test.sh
-            ./test.sh            
+            ./test.sh
+            sleep 10
             lg -o
             echo "${B}-------------------- END TESTS --------------------"
       - name: Save results
