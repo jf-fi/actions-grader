@@ -16,9 +16,8 @@ jobs:
           options: -v ${{ github.workspace }}:/work -e B=\033[0;34m
           run: |
             echo "${B}------------------- START TESTS -------------------"
-            cd /work/test
-            chmod +x ./test.sh
-            ./test.sh
+            cd /work/test && chmod +x ./test.sh && ./test.sh
+            sleep 0.1 && lg -o && sleep 0.1
             echo "${B}-------------------- END TESTS --------------------"
       - name: Save results
         uses: actions/upload-artifact@v3
