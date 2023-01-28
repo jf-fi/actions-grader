@@ -15,10 +15,12 @@ jobs:
           image: jfaz1/testing:latest
           options: -v ${{ github.workspace }}:/work -e B=\033[0;34m
           run: |
-            echo "${B}------- START TESTS -------"
-            chmod +x /work/test/test.sh
-            /work/test/test.sh            
-            echo "${B}-------- END TESTS --------"
+            echo "${B}------------------- START TESTS -------------------"
+            cd /work/test
+            chmod +x ./test.sh
+            ./test.sh            
+            lg -o
+            echo "${B}-------------------- END TESTS --------------------"
       - name: Save results
         uses: actions/upload-artifact@v3
         with:
