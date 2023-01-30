@@ -6,26 +6,23 @@ jobs:
   test:
     name: Run tests
     runs-on: ubuntu-latest
+    container:
+      image: jfaz1/testing:latest
+      env:
+        B: \033[0;34m
+      volumes:
+        ${{ github.workspace }}:/work
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Run tests
-        uses: addnab/docker-run-action@v3
-        with:
-          image: jfaz1/testing:latest
-          options: -v ${{ github.workspace }}:/work -e B=\033[0;34m
-          run: |
-            echo "${B}------------------- START TESTS -------------------"
-            cd /work/test && chmod +x ./test.sh && ./test.sh
-            sleep 0.1 && lg -o && sleep 0.1
-            echo "${B}-------------------- END TESTS --------------------"
+        run: |
+          echo "${B}------------------- START TESTS -------------------"
+          cd /work/test && chmod +x ./test.sh && ./test.sh
+          sleep 0.1 && lg -o && sleep 0.1
+          echo "${B}-------------------- END TESTS --------------------"
       - name: Save results
         uses: actions/upload-artifact@v3
         with:
           name: results
           path: ${{ github.workspace }}/test/results.csv
-      - name: Check if failed
-        if: env.FAILED == '1'
-        uses: actions/github-script@v3
-        with:
-          script: core.setFailed('Failed one or more tests!')
