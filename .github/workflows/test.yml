@@ -26,4 +26,6 @@ jobs:
           name: results
           path: ${{ github.workspace }}/test/results.csv
       - name: Check if failed
-        run: if [[ $FAILED -eq 1 ]]; then exit 1; fi
+        run: |
+          echo $FAILED
+          if [[ $FAILED -eq 1 ]]; then exit 1; fi
