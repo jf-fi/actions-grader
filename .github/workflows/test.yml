@@ -16,9 +16,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: "Run tests :coin:"
+      - name: "Run tests"
         run: |
-          echo "Test Summary :coin:" >> $GITHUB_STEP_SUMMARY
           cd /work/test && chmod +x ./test.sh && ./test.sh
           sleep 0.1 && lg -o && sleep 0.1
       - name: Save results
