@@ -10,6 +10,9 @@ jobs:
       image: jfaz1/testing:latest
       volumes:
         - ${{ github.workspace }}:/work
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
