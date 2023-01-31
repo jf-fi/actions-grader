@@ -23,7 +23,7 @@ jobs:
       - name: Save results
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ github.repository }}
+          name: ${{ github.actor }}_${{ github.event.repository.name }}
           path: ${{ github.workspace }}/test/results.csv
       - name: Check if failed
         run: |
