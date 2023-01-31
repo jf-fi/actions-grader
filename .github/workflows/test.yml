@@ -10,8 +10,6 @@ jobs:
       image: jfaz1/testing:latest
       volumes:
         - ${{ github.workspace }}:/work
-      env:
-        REPO_NAME: ${{ github.repository }}
     defaults:
       run:
         shell: bash
@@ -25,7 +23,7 @@ jobs:
       - name: Save results
         uses: actions/upload-artifact@v3
         with:
-          name: results
+          name: ${{ github.repository }}
           path: ${{ github.workspace }}/test/results.csv
       - name: Check if failed
         run: |
