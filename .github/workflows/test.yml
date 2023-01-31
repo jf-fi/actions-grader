@@ -4,12 +4,14 @@ on:
     branches: [ main ]
 jobs:
   test:
-    name: Run tests
+    name: Test
     runs-on: ubuntu-latest
     container:
       image: jfaz1/testing:latest
       volumes:
         - ${{ github.workspace }}:/work
+      env:
+        REPO_NAME: ${{ github.repository }}
     defaults:
       run:
         shell: bash
